@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SeleniumTestSuite">
+    <test name="ScenarioTests">
+        <classes>
+            <class name="Task3.Scenario1"/>
+            <class name="Task3.Scenario2"/>
+            <class name="Task4.Scenario_1"/>
+            <class name="Task4.Scenario_2"/>
+            <class name="Task4.Scenario_3"/>
+            <class name="Task4.Scenario_4"/>
+            <!-- Add more classes if needed -->
+        </classes>
+    </test>
+</suite>
