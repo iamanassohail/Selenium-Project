@@ -2,16 +2,12 @@ package Task3;
 
 import Driver.Globaldriver;
 import Elements.Web_elements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 public class Scenario2 {
     @Test
@@ -20,6 +16,8 @@ public class Scenario2 {
         Web_elements.username(driver).sendKeys("standard_user");
         Web_elements.password(driver).sendKeys("secret_sauce");
         Web_elements.login_btn(driver).click();
+        WebElement ProductsMsg = Web_elements.Products_msg(driver);
+        Assert.assertTrue(ProductsMsg.isDisplayed(), "User is not on the home page");
         driver.quit();
     }
 

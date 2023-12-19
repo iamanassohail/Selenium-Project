@@ -16,4 +16,7 @@ public class Web_elements {
     public static WebElement login_btn(WebDriver driver){
         return driver.findElement(By.id("login-button"));
     }
+    public static WebElement Products_msg(WebDriver driver){
+        return driver.findElement(By.className("title"));
+    }
 }
