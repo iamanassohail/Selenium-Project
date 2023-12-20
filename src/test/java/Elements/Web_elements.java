@@ -19,4 +19,7 @@ public class Web_elements {
     public static WebElement Products_msg(WebDriver driver){
         return driver.findElement(By.className("title"));
     }
+    public static WebElement Error_msg(WebDriver driver){
+        return driver.findElement(By.className("error-button"));
+    }
 }
