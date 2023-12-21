@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Globaldriver {
+    public static WebDriver driver;
     public static WebDriver StartWebDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream ip = new FileInputStream("C:\\Users\\anas.sohail_ventured\\Desktop\\Selenium-Project-main\\src\\test\\java\\Resources\\config.properties");
         prop.load(ip);
-        WebDriver driver;
         if(prop.getProperty("browser").equals("chrome")){
             ChromeOptions op = new ChromeOptions();
             op.addArguments("--start-maximized");
