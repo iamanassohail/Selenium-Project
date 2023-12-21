@@ -12,11 +12,13 @@ import java.io.IOException;
 
 public class Scenario2 {
     public static WebElement ProductsMsg;
+    public static String usernameToSend = "standard_user";
+    public static String passwordToSend = "secret_sauce";
     @Test
     public void login_valid() throws IOException {
         WebDriver driver = Globaldriver.StartWebDriver();
-        Web_elements.username(driver).sendKeys("standard_user");
-        Web_elements.password(driver).sendKeys("secret_sauce");
+        Web_elements.username(driver).sendKeys(usernameToSend);
+        Web_elements.password(driver).sendKeys(passwordToSend);
         Web_elements.login_btn(driver).click();
         ProductsMsg = Web_elements.Products_msg(driver);
         Assert.assertTrue(ProductsMsg.isDisplayed(), "User is not on the home page");
