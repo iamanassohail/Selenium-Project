@@ -13,7 +13,7 @@ public class Globaldriver {
     @Test
     public static void StartWebDriver() throws IOException {
         Properties prop = new Properties();
-        FileInputStream ip = new FileInputStream("/home/vend/IdeaProjects/Selenuim_Assignment/src/test/java/Resources/config.properties");
+        FileInputStream ip = new FileInputStream("C:\\Users\\anas.sohail_ventured\\Desktop\\Selenium-own-framework\\src\\test\\java\\Resources\\config.properties");
         prop.load(ip);
         if(prop.getProperty("browser").equals("chrome")){
             WebDriver driver = new ChromeDriver();
