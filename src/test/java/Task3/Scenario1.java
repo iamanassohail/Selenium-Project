@@ -14,6 +14,8 @@ import java.util.Properties;
 import io.percy.selenium.Percy;
 
 public class Scenario1 {
+
+    public Percy percy;
     @Test
     public void login_invalid() throws IOException {
         Properties prop = new Properties();
@@ -21,18 +23,23 @@ public class Scenario1 {
         prop.load(ip);
         if(prop.getProperty("browser").equals("chrome")){
             WebDriver driver = new ChromeDriver();
+            percy = new Percy(driver);
             driver.navigate().to(prop.getProperty("url"));
-
+            percy.snapshot("Screenshot_1");
             Web_elements.username(driver).sendKeys("standard_user");
             Web_elements.password(driver).sendKeys("secret123");
             Web_elements.login_btn(driver).click();
+            percy.snapshot("Screenshot_2");
         }
         if(prop.getProperty("browser").equals("firefox")){
             WebDriver driver2 = new FirefoxDriver();
+            percy = new Percy(driver2);
             driver2.navigate().to(prop.getProperty("url"));
+            percy.snapshot("Screenshot_1");
             Web_elements.username(driver2).sendKeys("standard_user");
             Web_elements.password(driver2).sendKeys("secret123");
             Web_elements.login_btn(driver2).click();
+            percy.snapshot("Screenshot_2");
         }
     }
 }
