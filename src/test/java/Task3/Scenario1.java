@@ -23,8 +23,8 @@ public class Scenario1 {
         prop.load(ip);
         if(prop.getProperty("browser").equals("chrome")){
             WebDriver driver = new ChromeDriver();
-            percy = new Percy(driver);
             driver.navigate().to(prop.getProperty("url"));
+            percy = new Percy(driver);
             //percy.screenshot("Screenshot_1");
             percy.snapshot("Screenshot_1");
             Web_elements.username(driver).sendKeys("standard_user");
@@ -35,8 +35,8 @@ public class Scenario1 {
         }
         if(prop.getProperty("browser").equals("firefox")){
             WebDriver driver2 = new FirefoxDriver();
-            percy = new Percy(driver2);
             driver2.navigate().to(prop.getProperty("url"));
+            percy = new Percy(driver2);
             //percy.screenshot("Screenshot_1");
             percy.snapshot("Screenshot_1");
             Web_elements.username(driver2).sendKeys("standard_user");
